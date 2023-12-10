@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: breakout
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: breakout
+  template:
+    metadata:
+      labels:
+        app: breakout
+    spec:
+      containers:
+      - name: breakout
+        image: sajal1608/breakout:latest
+        ports:
+        - containerPort: 80
